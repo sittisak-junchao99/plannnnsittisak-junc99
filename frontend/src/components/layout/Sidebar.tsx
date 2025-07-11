@@ -24,7 +24,7 @@ const navigation = [
   { name: 'Customers', href: '/customers', icon: BuildingOfficeIcon },
   { name: 'Routes', href: '/routes', icon: MapIcon },
   { name: 'Schedules', href: '/schedules', icon: CalendarIcon },
-  { name: 'Daily Instances', href: '/instances', icon: ClockIcon },
+  { name: 'Schedule Planner', href: '/instances', icon: ClockIcon },
   { name: 'Conflicts', href: '/conflicts', icon: ExclamationTriangleIcon },
   { name: 'Suggestions', href: '/suggestions', icon: LightBulbIcon },
   { name: 'Alerts', href: '/alerts', icon: BellIcon },
