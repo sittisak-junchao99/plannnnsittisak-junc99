@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-import { PlusIcon } from '@heroicons/react/24/outline'
+import { PlusIcon, MapIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabase'
 import type { Database } from '@/types/database'
+import RouteDistancePage from './RouteDistancePage'
 
 type RouteRow = Database['public']['Tables']['routes']['Row']
 
@@ -84,10 +85,16 @@ function RoutesList() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-secondary-900">Routes</h1>
-        <button className="btn-primary">
-          <PlusIcon className="h-5 w-5 mr-2" />
-          Add Route
-        </button>
+        <div className="flex space-x-3">
+          <Link to="/routes/distances" className="btn-outline">
+            <MapIcon className="h-5 w-5 mr-2" />
+            Route Distances
+          </Link>
+          <button className="btn-primary">
+            <PlusIcon className="h-5 w-5 mr-2" />
+            Add Route
+          </button>
+        </div>
       </div>
 
       {/* Search and Filters */}
@@ -167,6 +174,7 @@ export default function RoutesPage() {
   return (
     <Routes>
       <Route index element={<RoutesList />} />
+      <Route path="distances" element={<RouteDistancePage />} />
       {/* Add more routes for create, edit, view */}
     </Routes>
   )
