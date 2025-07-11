@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-secondary-50 text-secondary-900;
+  }
+  
+  * {
+    @apply border-secondary-200;
+  }
+}
+
+@layer components {
+  /* Button Components */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-100 text-secondary-900 hover:bg-secondary-200 focus:ring-secondary-500;
+  }
+  
+  .btn-success {
+    @apply btn bg-success-600 text-white hover:bg-success-700 focus:ring-success-500;
+  }
+  
+  .btn-warning {
+    @apply btn bg-warning-600 text-white hover:bg-warning-700 focus:ring-warning-500;
+  }
+  
+  .btn-error {
+    @apply btn bg-error-600 text-white hover:bg-error-700 focus:ring-error-500;
+  }
+  
+  .btn-outline {
+    @apply btn border border-secondary-300 bg-white text-secondary-700 hover:bg-secondary-50 focus:ring-secondary-500;
+  }
+  
+  .btn-ghost {
+    @apply btn text-secondary-700 hover:bg-secondary-100 focus:ring-secondary-500;
+  }
+  
+  /* Input Components */
+  .input {
+    @apply block w-full px-3 py-2 border border-secondary-300 rounded-lg shadow-sm placeholder-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 sm:text-sm;
+  }
+  
+  .input-error {
+    @apply input border-error-300 focus:ring-error-500 focus:border-error-500;
+  }
+  
+  /* Card Components */
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-secondary-200;
+  }
+  
+  .card-header {
+    @apply px-6 py-4 border-b border-secondary-200;
+  }
+  
+  .card-body {
+    @apply px-6 py-4;
+  }
+  
+  .card-footer {
+    @apply px-6 py-4 border-t border-secondary-200 bg-secondary-50;
+  }
+  
+  /* Badge Components */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-800;
+  }
+  
+  .badge-success {
+    @apply badge bg-success-100 text-success-800;
+  }
+  
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-800;
+  }
+  
+  .badge-error {
+    @apply badge bg-error-100 text-error-800;
+  }
+  
+  .badge-secondary {
+    @apply badge bg-secondary-100 text-secondary-800;
+  }
+  
+  /* Table Components */
+  .table {
+    @apply min-w-full divide-y divide-secondary-200;
+  }
+  
+  .table-header {
+    @apply bg-secondary-50;
+  }
+  
+  .table-header-cell {
+    @apply px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider;
+  }
+  
+  .table-body {
+    @apply bg-white divide-y divide-secondary-200;
+  }
+  
+  .table-row {
+    @apply hover:bg-secondary-50 transition-colors;
+  }
+  
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-secondary-900;
+  }
+  
+  /* Form Components */
+  .form-group {
+    @apply space-y-1;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-secondary-700;
+  }
+  
+  .form-error {
+    @apply text-sm text-error-600;
+  }
+  
+  .form-help {
+    @apply text-sm text-secondary-500;
+  }
+  
+  /* Loading States */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-secondary-200 border-t-primary-600;
+  }
+  
+  .loading-skeleton {
+    @apply animate-pulse bg-secondary-200 rounded;
+  }
+  
+  /* Status Indicators */
+  .status-active {
+    @apply badge-success;
+  }
+  
+  .status-inactive {
+    @apply badge-secondary;
+  }
+  
+  .status-suspended {
+    @apply badge-error;
+  }
+  
+  .status-maintenance {
+    @apply badge-warning;
+  }
+  
+  .status-scheduled {
+    @apply badge-primary;
+  }
+  
+  .status-confirmed {
+    @apply badge-success;
+  }
+  
+  .status-in-progress {
+    @apply badge-warning;
+  }
+  
+  .status-completed {
+    @apply badge-success;
+  }
+  
+  .status-cancelled {
+    @apply badge-error;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
