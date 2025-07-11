@@ -261,6 +261,9 @@ export interface Database {
           id: string
           route_schedule_id: string
           schedule_date: string
+          standby_date: string | null
+          standby_time: string | null
+          departure_date: string | null
           driver_id: string | null
           vehicle_id: string | null
           standby_time: string | null
@@ -268,6 +271,8 @@ export interface Database {
           actual_departure_time: string | null
           actual_arrival_time: string | null
           status: 'Scheduled' | 'Confirmed' | 'In Progress' | 'Completed' | 'Cancelled'
+          is_override: boolean | null
+          override_fields: string[] | null
           override_reason: string | null
           notes: string | null
           created_by: string | null
@@ -278,6 +283,9 @@ export interface Database {
           id?: string
           route_schedule_id: string
           schedule_date: string
+          standby_date?: string | null
+          standby_time?: string | null
+          departure_date?: string | null
           driver_id?: string | null
           vehicle_id?: string | null
           standby_time?: string | null
@@ -285,6 +293,8 @@ export interface Database {
           actual_departure_time?: string | null
           actual_arrival_time?: string | null
           status?: 'Scheduled' | 'Confirmed' | 'In Progress' | 'Completed' | 'Cancelled'
+          is_override?: boolean | null
+          override_fields?: string[] | null
           override_reason?: string | null
           notes?: string | null
           created_by?: string | null
@@ -295,6 +305,9 @@ export interface Database {
           id?: string
           route_schedule_id?: string
           schedule_date?: string
+          standby_date?: string | null
+          standby_time?: string | null
+          departure_date?: string | null
           driver_id?: string | null
           vehicle_id?: string | null
           standby_time?: string | null
@@ -302,6 +315,8 @@ export interface Database {
           actual_departure_time?: string | null
           actual_arrival_time?: string | null
           status?: 'Scheduled' | 'Confirmed' | 'In Progress' | 'Completed' | 'Cancelled'
+          is_override?: boolean | null
+          override_fields?: string[] | null
           override_reason?: string | null
           notes?: string | null
           created_by?: string | null

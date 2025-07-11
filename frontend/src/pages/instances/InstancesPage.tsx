@@ -9,23 +9,26 @@ import {
 import ScheduleGrid from '@/components/schedule/ScheduleGrid'
 import ScheduleKanban from '@/components/schedule/ScheduleKanban'
 import ScheduleList from '@/components/schedule/ScheduleList'
+import LargeScaleScheduleGrid from '@/components/schedule/LargeScaleScheduleGrid'
 import CreateScheduleInstancePage from './CreateScheduleInstancePage'
 
-type ViewMode = 'grid' | 'kanban' | 'list'
+type ViewMode = 'grid' | 'large-grid' | 'kanban' | 'list'
 
 function InstancesMain() {
-  const [viewMode, setViewMode] = useState<ViewMode>('grid')
+  const [viewMode, setViewMode] = useState<ViewMode>('large-grid')
 
   const renderView = () => {
     switch (viewMode) {
       case 'grid':
         return <ScheduleGrid />
+      case 'large-grid':
+        return <LargeScaleScheduleGrid />
       case 'kanban':
         return <ScheduleKanban />
       case 'list':
         return <ScheduleList />
       default:
-        return <ScheduleGrid />
+        return <LargeScaleScheduleGrid />
     }
   }
 
@@ -47,6 +50,17 @@ function InstancesMain() {
             >
               <Squares2X2Icon className="h-4 w-4 mr-2" />
               Grid
+            </button>
+            <button
+              onClick={() => setViewMode('large-grid')}
+              className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                viewMode === 'large-grid'
+                  ? 'bg-white text-secondary-900 shadow-sm'
+                  : 'text-secondary-600 hover:text-secondary-900'
+              }`}
+            >
+              <Squares2X2Icon className="h-4 w-4 mr-2" />
+              Large Scale
             </button>
             <button
               onClick={() => setViewMode('kanban')}
